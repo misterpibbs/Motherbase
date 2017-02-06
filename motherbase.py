@@ -3,12 +3,16 @@ import time
 GPIO.setmode(GPIO.BCM) 
 GPIO.setwarnings(FALSE) 
 GPIO.setup(17,GPIO.OUT)
-on = 'on' 
-off = 'off' 
-var = input (["On or Off?"]) 
-if var == on: 
-  GPIO.Output(17,GPIO.LOW)
-  print "LED ON" 
-elif var == off: 
-  GPIO.Output(17,GPIO.HIGH) 
-  print "LED OFF" 
+fobone = True 
+while fobone:
+  on = "on" 
+  off = "off" 
+  var = input(["On or Off?"])
+  if var == on: 
+    GPIO.output(17,LOW)
+    print "LED on"
+    continue
+  elif var == off:
+    GPIO.output(17,HIGH)
+    print "LED off" 
+    continue 
