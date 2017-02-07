@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time 
 GPIO.setmode(GPIO.BCM) 
-GPIO.setwarnings(FALSE) 
+GPIO.setwarnings(False) 
 GPIO.setup(17,GPIO.OUT)
 fobone = True 
 while fobone:
