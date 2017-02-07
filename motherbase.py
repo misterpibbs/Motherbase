@@ -18,5 +18,5 @@ while fobone:
     print "LED off" 
     continue 
   elif var == c:
-    fobone = false
+    fobone = False
     print "Goodbye" 
