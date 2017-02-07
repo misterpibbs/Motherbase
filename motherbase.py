@@ -6,7 +6,8 @@ GPIO.setup(17,GPIO.OUT)
 fobone = True 
 while fobone:
   on = "on" 
-  off = "off" 
+  off = "off"
+  c = "c"
   var = input(["On or Off?"])
   if var == on: 
     GPIO.output(17,LOW)
@@ -16,3 +17,6 @@ while fobone:
     GPIO.output(17,HIGH)
     print "LED off" 
     continue 
+  elif var == c:
+    fobone = false
+    print "Goodbye" 
