@@ -11,11 +11,11 @@ while True:
   on = "on"
   off = "off"
   var = input(["On or Off?"])
-   if var == on:
+  if var == on:
    print "Sending"
    sock.sendto(CMD, (UDP_IP, UDP_PORT))
                
-   elif var == off:
+  elif var == off:
    print "Sending"
    sock.sendto(CMDOFF, (UDP_IP, UDP_PORT))
 
