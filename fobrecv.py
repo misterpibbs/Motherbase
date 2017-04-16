@@ -9,8 +9,8 @@ GPIO.setwarnings(False)
 GPIO.setup(11, GPIO.OUT, initial=GPIO.HIGH)
 
 # Socket Setup
- UDP_IP = "10.0.0.151"
- UDP_PORT = 5005
+UDP_IP = "10.0.0.151"
+UDP_PORT = 5005
 # Rceiving the data (int) that translates to on/off for light
 while True: 
  socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
