@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO 
 import time 
 GPIO.setmode(GPIO.BOARD)
-GIPO.setwarnings(FALSE) 
+GPIO.setwarnings(False) 
 GPIO.setup(11,GPIO.OUT) 
 
-GPIO.ouput(11,GPIO.HIGH) 
+GPIO.output(11,GPIO.HIGH) 
