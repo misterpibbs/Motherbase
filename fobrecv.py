@@ -2,23 +2,27 @@ import socket
 import RPi.GPIO as GPIO 
  
 
-# Client side
+# Server Side
 # Set-up gpio channel
 GPIO.setmode(GPIO.BOARD) 
 GPIO.setwarnings(False)
 GPIO.setup(11, GPIO.OUT, initial=GPIO.HIGH)
 
 # Socket Setup
-UDP_IP = "10.0.0.151"
-UDP_PORT = 5005
-# Rceiving the data (int) that translates to on/off for light
-while True: 
- socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
- socket.bind((UDP_IP, UDP_PORT)) 
- data, addr = socket.recvfrom(1024) 
- print "Incoming" 
- data = int(data)
- GPIO.output(11, data) 
- continue 
-  
+TCP_IP = "10.0.0.151"
+TCP_PORT = 5005
+BUFFER_SIZE = 1024
 
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((TCP_IP, TCP_PORT)) 
+s.listen(1)
+
+# Rceiving the data (int) that translates to on/off for light
+conn, addr = s.accept()
+print "Linked"
+while 1: 
+ data = conn.recv(BUFFER_SIZE) 
+ data = int(data) 
+ GPIO.output(11, data) 
+  
+conn.close() 
