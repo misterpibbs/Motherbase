@@ -2,7 +2,7 @@ import socket
 # Setup socket connection
 TCP_IP = "10.0.0.151"
 TCP_PORT = 5005
-BUFFER_SIZE: 1024
+BUFFER_SIZE = 1024
 CMD = "0" 
 CMDOFF = "1"
 
