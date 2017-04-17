@@ -12,6 +12,7 @@ s.connect((TCP_IP, TCP_PORT))
 while True: 
   on = "on"
   off = "off"
+  c = "c"
   var = input(["On or Off?"])
   if var == on:
     print "Sending"
