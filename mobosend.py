@@ -26,3 +26,4 @@ while True:
   elif var == c:
     print "Goodbye"
     s.close()
+    break 
