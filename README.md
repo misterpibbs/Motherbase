@@ -7,7 +7,7 @@ Any and every device can be easily integrated with Motherbase via a WiFi connect
 
 # Motherbase GUI
 
-O4223017: Introduction of GUI Mocks have been added the Motherbase project.
+*UPDATE:04-23-2017*: Introduction of GUI Mocks have been added the to Motherbase project.
 
 The directory layout for GUI Mocks of Django, Bottle and Kivy are as follows:
 
