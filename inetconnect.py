@@ -5,7 +5,27 @@
 import RPi.GPIO as GPIO 
 import socket 
 import time 
+import urllib2
 
 GPIO.setmode(GPIO.BOARD) 
 GPIO.setwarnings(False) 
-GPIO.setup( , GPIO.OUT) 
+GPIO.setup(11, GPIO.OUT) 
+
+def inet_connect():
+ try:
+  urllib2.urlopen('http://www.capitalteas.com', timeout=1)
+  print "Connected"
+  return True  
+ except urllib2URLError as err: 
+  print "Nah" 
+  return False
+
+inet_connect() 
+
+if inet_connect() == True: 
+  GPIO.output(11, 1) 
+  print "Connected" 
+
+elif inet_connect() == False: 
+  GPIO.output(11, 0) 
+  print "Nope" 
