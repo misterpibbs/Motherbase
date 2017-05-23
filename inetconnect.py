@@ -3,23 +3,29 @@
 # has been established. 
 
 import RPi.GPIO as GPIO 
-import socket 
 import time 
 import urllib2
 
+def check(pin):
+ GPIO.output(pin, 1)
+ time.sleep(1)
+ GPIO.output(pin, 0)
+ time.sleep(1)
+ return 
+ 
 GPIO.setmode(GPIO.BOARD) 
 GPIO.setwarnings(False) 
 GPIO.setup(11, GPIO.OUT) 
 
+
 def inet_connect():
  try:
   urllib2.urlopen('http://www.capitalteas.com', timeout=1)
-  print "Connected"
   return True  
- except urllib2URLError as err: 
-  print "Nah" 
+ except urllib2URLError as err:  
   return False
 
+check(11)
 inet_connect() 
 
 if inet_connect() == True: 
@@ -27,5 +33,5 @@ if inet_connect() == True:
   print "Connected" 
 
 elif inet_connect() == False: 
-  GPIO.output(11, 0) 
-  print "Nope" 
+  check(11) 
+  print "Not yet..."
