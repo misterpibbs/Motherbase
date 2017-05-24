@@ -6,10 +6,10 @@ import RPi.GPIO as GPIO
 # Set-up gpio channel
 GPIO.setmode(GPIO.BOARD) 
 GPIO.setwarnings(False)
-GPIO.setup(11, GPIO.OUT, initial=GPIO.HIGH)
+GPIO.setup(10, GPIO.OUT, initial=GPIO.HIGH)
 
 # Socket Setup
-TCP_IP = "10.0.0.151"
+TCP_IP = "10.0.0.10"
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 
@@ -23,6 +23,6 @@ print "Linked"
 while 1: 
  data = conn.recv(BUFFER_SIZE) 
  data = int(data) 
- GPIO.output(11, data) 
+ GPIO.output(10, data) 
   
-conn.close() 
+ 
