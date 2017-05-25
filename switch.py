@@ -1,11 +1,14 @@
 import RPi.GPIO as GPIO 
 import socket 
+import time
 
 TCP_IP = "10.0.0.10"
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 CMD = "0"
 CMDOFF = "1"
+
+time.sleep(30)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 s.connect((TCP_IP, TCP_PORT))
