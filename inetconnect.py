@@ -22,6 +22,8 @@ def inet_connect(): #sets internet connectivity check function
  except urllib2.URLError as err:  
   return False
 
+time.sleep(20)
+
 for i in range(0,10): #blinks led confirming previous script ran successfully
  check(11)
 
@@ -32,5 +34,6 @@ if inet_connect() == True: #if elif returns solid led if connection works
   print "Connected" 
 
 elif inet_connect() == False: 
-  check(11) 
+  for i in range(0,5):
+   check(11) 
   print "Not yet..."
