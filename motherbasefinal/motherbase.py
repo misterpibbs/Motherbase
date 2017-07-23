@@ -51,7 +51,7 @@ class Application(Frame):
         self.bO.pack(fill=X,padx=10)
 
         self.bF = Button(self)
-        self.bF["text"] = "Basement Off",
+        self.bF["text"] = "Basement Off"
         self.bF["fg"] = "red"
         self.bF["command"] = self.bOff
 
@@ -64,12 +64,12 @@ class Application(Frame):
 
         self.lO.pack(fill=X,padx=10)
 
-        self.lOff = Button(self)
-        self.lOff["text"] = "Living Room Off"
-        self.lOff["fg"] = "red"
-        self.lOff["command"] = self.lOff
+        self.lf = Button(self)
+        self.lf["text"] = "Living Room Off"
+        self.lf["fg"] = "red"
+        self.lf["command"] = self.lOff
 
-        self.lOff.pack(fill=X,padx=10)
+        self.lf.pack(fill=X,padx=10)
          
     def __init__(self, master=None):
         Frame.__init__(self, master)
