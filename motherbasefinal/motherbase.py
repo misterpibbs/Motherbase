@@ -18,14 +18,22 @@ s.connect((TCP_IP, TCP_PORT))
 
 class Application(Frame):
 
-    def lightOn(self):   
+    def bOn(self):   
         s.send("0")
-        print "ON"
+        print ("Basement On")
     
-    def lightOff(self):
+    def bOff(self):
         s.send("1")
-        print ("OFF") 
+        print ("Basement Off") 
 
+    def lOn(self):
+        s.send("2")
+        print ("Living room on")  
+  
+    def lOff(self):
+        s.send("3")
+        print ("Living room off") 
+    
     def createWidgets(self):
         self.QUIT = Button(self)
         self.QUIT["text"] = "QUIT"
@@ -33,23 +41,36 @@ class Application(Frame):
         self.QUIT["bg"] = "gray"
         self.QUIT["command"] = self.quit
    
-        self.QUIT.pack({"side": "bottom"})
+        self.QUIT.pack(fill=X,padx=10)
   
-        self.lO = Button(self)
-        self.lO["text"] = "On"
-        self.lO["fg"] = "green"
-        self.lO["command"] = self.lightOn
+        self.bO = Button(self)
+        self.bO["text"] = "Basement On"
+        self.bO["fg"] = "green"
+        self.bO["command"] = self.bOn
 
-        self.lO.pack({"side": "left"})
+        self.bO.pack(fill=X,padx=10)
 
-        self.lF = Button(self)
-        self.lF["text"] = "Off",
-        self.lF["fg"] = "red"
-        self.lF["command"] = self.lightOff
+        self.bF = Button(self)
+        self.bF["text"] = "Basement Off",
+        self.bF["fg"] = "red"
+        self.bF["command"] = self.bOff
 
-        self.lF.pack({"side": "right"})
+        self.bF.pack(fill=X,padx=10)
         
+        self.lO = Button(self) 
+        self.lO["text"] = "Living Room On"
+        self.lO["fg"] = "green" 
+        self.lO ["command"] = self.lOn
 
+        self.lO.pack(fill=X,padx=10)
+
+        self.lOff = Button(self)
+        self.lOff["text"] = "Living Room Off"
+        self.lOff["fg"] = "red"
+        self.lOff["command"] = self.lOff
+
+        self.lOff.pack(fill=X,padx=10)
+         
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.pack()
