@@ -12,20 +12,20 @@ GPIO.setup(10, GPIO.OUT, initial=GPIO.HIGH)
 #time.sleep(30)
 
 # Socket Setup
-TCP_IP = "10.0.0.140"
+TCP_IP = "10.0.0.11"
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 
-while True:
- s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
- s.bind((TCP_IP, TCP_PORT)) 
- s.listen(1)
- conn, addr = s.accept()
- print "Linked"
- while conn.recv(BUFFER_SIZE): 
-  data = conn.recv(BUFFER_SIZE) 
-  data = int(data) 
-  GPIO.output(10, data) 
-  pass
- else:
-  conn.close()
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((TCP_IP, TCP_PORT)) 
+s.listen(1)
+conn, addr = s.accept()
+print "Linked"
+
+while True:  
+ data = conn.recv(BUFFER_SIZE) 
+ data = int(data) 
+ GPIO.output(10, data) 
+
+else:
+ conn.close()
