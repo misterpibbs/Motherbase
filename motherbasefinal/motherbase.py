@@ -20,12 +20,10 @@ class Application(Frame):
 
     def lightOn(self):   
         s.send("0")
-        s.send("0") 
         print "ON"
     
     def lightOff(self):
         s.send("1")
-        s.send("1") 
         print ("OFF") 
 
     def createWidgets(self):
