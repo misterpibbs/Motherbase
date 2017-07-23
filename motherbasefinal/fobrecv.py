@@ -25,7 +25,12 @@ print "Linked"
 while True:  
  data = conn.recv(BUFFER_SIZE) 
  data = int(data) 
- GPIO.output(10, data) 
+ 
+ if data == 0:
+  GPIO.output(10, 0) 
+
+ elif data == 1: 
+  GPIO.output(10, 1)
 
 else:
  conn.close()
