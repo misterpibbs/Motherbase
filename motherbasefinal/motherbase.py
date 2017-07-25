@@ -76,6 +76,7 @@ class Application(Frame):
         self.createWidgets()
 
 root = Tk()
+root.wm_title("Welcome to Motherbase")
 app = Application(master=root)
 app.mainloop()
 root.destroy()
