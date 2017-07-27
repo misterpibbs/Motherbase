@@ -32,7 +32,15 @@ class Application(Frame):
     def lOff(self):
         s.send("3")
         print ("Living room off") 
-    
+
+    def aOn(self):
+        s.send("10")
+        print ("All On!")
+
+    def aOff(self):
+        s.send("ll")
+        print ("All Off!")
+
     def createWidgets(self):
         self.QUIT = Button(self)
         self.QUIT["text"] = "QUIT"
@@ -40,7 +48,7 @@ class Application(Frame):
         self.QUIT["bg"] = "gray"
         self.QUIT["command"] = self.quit
    
-        self.QUIT.grid(row=2, columnspan=2)
+        self.QUIT.grid(row=4, columnspan=2)
   
         self.bO = Button(self)
         self.bO["text"] = "Basement On"
@@ -69,7 +77,23 @@ class Application(Frame):
         self.lf["command"] = self.lOff
 
         self.lf.grid(row=1, column=1)
-         
+  
+        self.aO = Button(self)
+        self.aO["text"] = "All On"
+        self.aO["fg"] = "green"
+        self.aO["bg"] = "black"
+        self.aO["command"] = self.aOn
+
+        self.aO.grid(row=2, columnspan=2)
+
+        self.aF = Button(self)
+        self.aF["text"] =  "All Off"
+        self.aF["fg"] = "red"
+        self.aF["bg"] = "black" 
+        self.aF["command"] = self.aOff
+
+        self.aF.grid(row=3, columnspan=2)
+       
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.pack()
