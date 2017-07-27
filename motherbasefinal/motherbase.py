@@ -18,27 +18,27 @@ s.connect((TCP_IP, TCP_PORT))
 class Application(Frame):
 
     def bOn(self):   
-        s.send("0")
+        s.send("bO")
         print ("Basement On")
     
     def bOff(self):
-        s.send("1")
+        s.send("bF")
         print ("Basement Off") 
 
     def lOn(self):
-        s.send("2")
+        s.send("lO")
         print ("Living room on")  
   
     def lOff(self):
-        s.send("3")
+        s.send("lF")
         print ("Living room off") 
 
     def aOn(self):
-        s.send("10")
+        s.send("aO")
         print ("All On!")
 
     def aOff(self):
-        s.send("ll")
+        s.send("aF")
         print ("All Off!")
 
     def createWidgets(self):
