@@ -11,7 +11,6 @@ GPIO.setup(12, GPIO.OUT)
 
 TCP_IP = "10.0.0.11"
 TCP_PORT = 5005
-BUFFER_SIZE = 1024
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((TCP_IP, TCP_PORT)) 
@@ -20,19 +19,27 @@ conn, addr = s.accept()
 print "Linked"
 
 while True:  
- data = conn.recv(BUFFER_SIZE) 
- data = int(data) 
- 
- if data == 0:
+ data = conn.recv(1024)
+ data = str(data)
+
+ if data == "bO":
   GPIO.output(10, 0) 
 
- elif data == 1: 
+ elif data == "bF": 
   GPIO.output(10, 1)
 
- elif data == 2:
+ elif data == "lO":
   GPIO.output(11, 0)
 
- elif data == 3:
+ elif data == "lF":
+  GPIO.output(11, 1)
+
+ elif data == "aO":
+  GPIO.output(10, 0)
+  GPIO.output(11, 0)
+
+ elif data == "aF":
+  GPIO.output(10, 1)
   GPIO.output(11, 1)
 
 else:
