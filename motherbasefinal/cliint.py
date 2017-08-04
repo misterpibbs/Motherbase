@@ -2,9 +2,9 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
-GPIO.setup(10, GPIO.OUT, initial=1)
-GPIO.setup(11, GPIO.OUT, initial=1)
-GPIO.setup(12, GPIO.OUT, initial=1)
+GPIO.setup(10, GPIO.OUT)
+GPIO.setup(11, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
 
 fobone = True
 while fobone:
