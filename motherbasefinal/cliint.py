@@ -10,8 +10,8 @@ fobone = True
 while fobone:
   basement = "b"
   basementoff = "bo"
-  kitchen = "k"
-  kitchenoff = "ko"
+  livingroom = "l"
+  livingroomoff= "lo"
   bathroom = "br"
   bathroomoff = "bro"
   c = "c"
@@ -24,11 +24,11 @@ while fobone:
     GPIO.output(10,GPIO.HIGH)
     print "It's dark down here..."
     continue 
-  elif var == kitchen:
+  elif var == livingroom:
     GPIO.output(11,GPIO.LOW)
     print "Kitchen Illuminated"
     continue
-  elif var == kitchenoff:
+  elif var == livingroomoff:
     GPIO.output(11,GPIO.HIGH)
     print "Make sure you closed the fridge"
   elif var == bathroom:
