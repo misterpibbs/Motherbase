@@ -26,11 +26,11 @@ while fobone:
     continue 
   elif var == livingroom:
     GPIO.output(11,GPIO.LOW)
-    print "Kitchen Illuminated"
+    print "Living room lit"
     continue
   elif var == livingroomoff:
     GPIO.output(11,GPIO.HIGH)
-    print "Make sure you closed the fridge"
+    print "Turn off the tv too!"
   elif var == bathroom:
     GPIO.output(12,GPIO.LOW)
     print "If you sprinkle when you tinkle..."
