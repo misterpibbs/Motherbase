@@ -7,36 +7,43 @@ GPIO.setup(11, GPIO.OUT)
 GPIO.setup(12, GPIO.OUT)
 
 fobone = True
+
 while fobone:
   basement = "b"
-  basementoff = "bo"
-  livingroom = "l"
-  livingroomoff= "lo"
+  basementOff = "bo"
+  livingRoom = "l"
+  livingRoomoff= "lo"
   bathroom = "br"
-  bathroomoff = "bro"
+  bathroomOff = "bro"
   c = "c"
+  all = "a"
+  allOff = "ao"
   var = raw_input (["Whaddya' want?"])
   if var == basement:
     GPIO.output(10,GPIO.LOW)
-    print "Basement Illuminated"
-    continue 
-  elif var == basementoff:
+  elif var == basementOff:
     GPIO.output(10,GPIO.HIGH)
     print "It's dark down here..."
-    continue 
-  elif var == livingroom:
-    GPIO.output(11,GPIO.LOW)
+  elif var == livingRoom:
+    GPIO.output(11, GPIO.LOW)
     print "Living room lit"
-    continue
-  elif var == livingroomoff:
-    GPIO.output(11,GPIO.HIGH)
+  elif var == livingRoomoff:
+    GPIO.output(11, GPIO.HIGH)
     print "Turn off the tv too!"
   elif var == bathroom:
-    GPIO.output(12,GPIO.LOW)
+    GPIO.output(12, GPIO.LOW)
     print "If you sprinkle when you tinkle..."
-  elif var == bathroomoff:
-    GPIO.output(12,GPIO.HIGH)
+  elif var == bathroomOff:
+    GPIO.output(12, GPIO.HIGH)
     print "Please be neat and wipe the seat!"
+  elif var == all:
+    GPIO.output(10, GPIO.LOW)
+    GPIO.output(11, GPIO.LOW)
+    print "All On"
+  elif var == allOff:
+    GPIO.output(10, GPIO.HIGHH)
+    GPIO.output(11, GPIO.HIGH)
+    print "Lights Out"   
   elif var == c:
     fobone = False
     print "Ok :("
