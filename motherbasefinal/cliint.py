@@ -19,8 +19,10 @@ while fobone:
   all = "a"
   allOff = "ao"
   var = raw_input (["Whaddya' want?"])
+
   if var == basement:
     GPIO.output(10,GPIO.LOW)
+    print "Get some work done!"
   elif var == basementOff:
     GPIO.output(10,GPIO.HIGH)
     print "It's dark down here..."
@@ -41,11 +43,10 @@ while fobone:
     GPIO.output(11, GPIO.LOW)
     print "All On"
   elif var == allOff:
-    GPIO.output(10, GPIO.HIGHH)
+    GPIO.output(10, GPIO.HIGH)
     GPIO.output(11, GPIO.HIGH)
-    print "Lights Out"   
+    print "Lights Out"
   elif var == c:
     fobone = False
     print "Ok :("
-   
-    
+
