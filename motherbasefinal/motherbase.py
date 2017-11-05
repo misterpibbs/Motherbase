@@ -4,7 +4,7 @@ import socket
 #import subprocess 
 #from subprocess import call
 
-TCP_IP = "10.0.0.11"
+TCP_IP = "10.0.0.15"
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 
@@ -47,13 +47,17 @@ class Application(Frame):
         self.QUIT["fg"] = "red"
         self.QUIT["bg"] = "gray"
         self.QUIT["command"] = self.quit
-   
+        self.QUIT["height"] = 5
+        self.QUIT["width"] = 10
+
         self.QUIT.grid(row=4, columnspan=2)
-  
+
         self.bO = Button(self)
         self.bO["text"] = "Basement On"
         self.bO["fg"] = "green"
         self.bO["command"] = self.bOn
+        self.bO["height"] = 5
+        self.bO["width"] = 10
 
         self.bO.grid(row=0, column=0)
 
@@ -61,6 +65,8 @@ class Application(Frame):
         self.bF["text"] = "Basement Off"
         self.bF["fg"] = "red"
         self.bF["command"] = self.bOff
+        self.bF["height"] = 5
+        self.bF["width"] = 10
 
         self.bF.grid(row=1, column=0)
         
@@ -68,6 +74,8 @@ class Application(Frame):
         self.lO["text"] = "Living Room On"
         self.lO["fg"] = "green" 
         self.lO ["command"] = self.lOn
+        self.lO["height"] = 5
+        self.lO["width"] = 10
 
         self.lO.grid(row=0, column=1)
 
@@ -75,6 +83,8 @@ class Application(Frame):
         self.lf["text"] = "Living Room Off"
         self.lf["fg"] = "red"
         self.lf["command"] = self.lOff
+        self.lf["height"] = 5
+        self.lf["width"] = 10
 
         self.lf.grid(row=1, column=1)
   
@@ -83,6 +93,8 @@ class Application(Frame):
         self.aO["fg"] = "green"
         self.aO["bg"] = "black"
         self.aO["command"] = self.aOn
+        self.aO["height"] = 5
+        self.aO["width"] = 10
 
         self.aO.grid(row=2, columnspan=2)
 
@@ -91,6 +103,8 @@ class Application(Frame):
         self.aF["fg"] = "red"
         self.aF["bg"] = "black" 
         self.aF["command"] = self.aOff
+        self.aF["height"] = 5
+        self.aF["width"] = 10
 
         self.aF.grid(row=3, columnspan=2)
        
