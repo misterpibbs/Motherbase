@@ -1,8 +1,8 @@
+#!/usr/bin/env python
+
 from Tkinter import *
 import RPi.GPIO as GPIO
 import socket
-#import subprocess 
-#from subprocess import call
 
 TCP_IP = "10.0.0.15"
 TCP_PORT = 5005
