@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import socket
 import RPi.GPIO as GPIO 
 import time  
@@ -9,7 +11,7 @@ GPIO.setup(11, GPIO.OUT)
 GPIO.setup(12, GPIO.OUT)
 
 
-TCP_IP = "10.0.0.11"
+TCP_IP = "10.0.0.15"
 TCP_PORT = 5005
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
