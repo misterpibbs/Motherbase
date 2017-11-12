@@ -12,15 +12,15 @@ GPIO.setup(12, GPIO.OUT)
 
 
 TCP_IP = "10.0.0.15"
-TCP_PORT = 5005
+TCP_PORT = 37450
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((TCP_IP, TCP_PORT)) 
+s.bind((TCP_IP, TCP_PORT))
 s.listen(1)
 conn, addr = s.accept()
 print "Linked"
 
-while True:  
+while True:
  data = conn.recv(1024)
  data = str(data)
 
