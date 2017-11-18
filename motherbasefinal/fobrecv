@@ -6,9 +6,9 @@ import time
 
 GPIO.setmode(GPIO.BOARD) 
 GPIO.setwarnings(False)
-GPIO.setup(10, GPIO.OUT)
-GPIO.setup(11, GPIO.OUT)
-GPIO.setup(12, GPIO.OUT)
+GPIO.setup(10, GPIO.OUT, initial=1)
+GPIO.setup(11, GPIO.OUT, initial=1)
+GPIO.setup(12, GPIO.OUT, initial=1)
 
 
 TCP_IP = "10.0.0.15"
@@ -20,7 +20,9 @@ s.listen(1)
 conn, addr = s.accept()
 print "Linked"
 
-while True:
+fobrecv = True
+
+while fobrecv:
  data = conn.recv(1024)
  data = str(data)
 
@@ -44,5 +46,6 @@ while True:
   GPIO.output(10, 1)
   GPIO.output(11, 1)
 
-else:
- conn.close()
+ elif data == "qp":
+  fobrecv = False
+  conn.close()
