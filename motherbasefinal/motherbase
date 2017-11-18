@@ -20,7 +20,7 @@ class Application(Frame):
     def bOn(mobo):   
         s.send("bO")
         print ("Basement On")
-    
+
     def bOff(mobo):
         s.send("bF")
         print ("Basement Off") 
@@ -41,16 +41,23 @@ class Application(Frame):
         s.send("aF")
         print ("All Off!")
 
-    def createWidgets(mobo):
-        mobo.QUIT = Button(mobo)
-        mobo.QUIT["text"] = "QUIT"
-        mobo.QUIT["fg"] = "red"
-        mobo.QUIT["bg"] = "gray"
-        mobo.QUIT["command"] = mobo.quit
-        mobo.QUIT["height"] = 5
-        mobo.QUIT["width"] = 10
+    def q(mobo):
+        s.send("qp")
+        sys.exit()
+        print ("Adios Muchachos")
 
-        mobo.QUIT.grid(row=4, columnspan=2)
+
+    def mainWindow(mobo):
+
+        mobo.qp = Button(mobo)
+        mobo.qp["text"] = "Quit"
+        mobo.qp["fg"] = "red"
+        mobo.qp["bg"] = "gray"
+        mobo.qp["command"] = mobo.q
+        mobo.qp["height"] = 5
+        mobo.qp["width"] = 10
+
+        mobo.qp.grid(row=4, columnspan=2)
 
         mobo.bO = Button(mobo)
         mobo.bO["text"] = "Basement On"
@@ -87,7 +94,7 @@ class Application(Frame):
         mobo.lf["width"] = 10
 
         mobo.lf.grid(row=1, column=1)
-  
+
         mobo.aO = Button(mobo)
         mobo.aO["text"] = "All On"
         mobo.aO["fg"] = "green"
@@ -111,13 +118,10 @@ class Application(Frame):
     def __init__(mobo, master=None):
         Frame.__init__(mobo, master)
         mobo.pack()
-        mobo.createWidgets()
+        mobo.mainWindow()
 
 root = Tk()
 root.wm_title("Welcome to Motherbase")
 app = Application(master=root)
 app.mainloop()
 root.destroy()
-  
-
-  
