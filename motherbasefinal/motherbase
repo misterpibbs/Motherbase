@@ -1,16 +1,13 @@
 #!/usr/bin/env python
 
 from Tkinter import *
-import RPi.GPIO as GPIO
 import socket
+import thread
+import time
 
 TCP_IP = "10.0.0.15"
 TCP_PORT = 37450
 BUFFER_SIZE = 1024
-
-GPIO.setmode(GPIO.BOARD)
-GPIO.setwarnings(False)
-GPIO.setup(10, GPIO.OUT)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((TCP_IP, TCP_PORT))
