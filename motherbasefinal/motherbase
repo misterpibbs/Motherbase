@@ -14,31 +14,31 @@ class MoBo_Window(Frame):
         fob1.s.bind((fob1.host, fob1.port))
     
     def bOn(mobo):   
-        s.send("bO")
+        fob1.send("bO")
         print ("Basement On")
 
     def bOff(mobo):
-        s.send("bF")
+        fob1.send("bF")
         print ("Basement Off") 
 
     def lOn(mobo):
-        s.send("lO")
+        fob1.send("lO")
         print ("Living room on")  
   
     def lOff(mobo):
-        s.send("lF")
+        fob1.send("lF")
         print ("Living room off") 
 
     def aOn(mobo):
-        s.send("aO")
+        fob1.send("aO")
         print ("All On!")
 
     def aOff(mobo):
-        s.send("aF")
+        fob1.send("aF")
         print ("All Off!")
 
     def q(mobo):
-        s.send("qp")
+        fob1.send("qp")
         sys.exit()
         print ("Adios Muchachos")
 
@@ -118,6 +118,6 @@ class MoBo_Window(Frame):
 
 root = Tk()
 root.wm_title("Welcome to Motherbase")
-app = Application(master=root)
+app = MoBo_Window(master=root)
 app.mainloop()
 root.destroy()
