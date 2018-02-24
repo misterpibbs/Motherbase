@@ -5,16 +5,14 @@ import socket
 import thread
 import time
 
-class FOBCONNECT(fobconn):
-    
+class MoBo_Window(Frame):
+
     def __init__(fob1, host, port):
         fob1.host = "10.0.0.15"
         fob1.port = 37450
         fob1.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         fob1.s.bind((fob1.host, fob1.port))
-
-class MoBo_Window(Frame):
-
+    
     def bOn(mobo):   
         s.send("bO")
         print ("Basement On")
