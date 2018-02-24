@@ -5,7 +5,7 @@ import socket
 import thread
 import time
 
-class FOBCONNECT(thread):
+class FOBCONNECT(fobconn):
     
     def __init__(fob1, host, port):
         fob1.host = 10.0.0.15
