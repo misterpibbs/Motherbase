@@ -5,14 +5,15 @@ import socket
 import thread
 import time
 
-TCP_IP = "10.0.0.15"
-TCP_PORT = 37450
-BUFFER_SIZE = 1024
+class FOBCONNECT(thread):
+    
+    def __init__(fob1, host, port):
+        fob1.host = 10.0.0.15
+        fob1.port = 37450
+        fob1.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        fob1.s.bind((fob1.host, fob1.port))
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((TCP_IP, TCP_PORT))
-
-class Application(Frame):
+class MoBo_Window(Frame):
 
     def bOn(mobo):   
         s.send("bO")
